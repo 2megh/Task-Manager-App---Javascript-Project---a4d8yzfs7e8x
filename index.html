@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="task.css">
+  
+</head>
+<body>
+   
+  <h1>Task Manager</h1>
+  
+  <form id="taskForm">
+    <label for="taskName">Task Name:</label>
+    <input type="text" id="taskName" required>
+    <br>
+    <label for="taskDescription">Task Description:</label>
+    <textarea id="taskDescription" required></textarea>
+    <br>
+    <label for="taskSection">Section:</label>
+    <select id="taskSection">
+      <option value="open">Open</option>
+      <option value="progress">In Progress</option>
+      <option value="review">In Review</option>
+      <option value="done">Done</option>
+    </select>
+    <br>
+    <input type="submit" value="Add Task">
+  </form>
 
+  <div id="openTasks" class="task-section">
+    <h2>Open</h2>
+    
+  </div>
+
+  <div id="progressTasks" class="task-section">
+    <h2>In Progress</h2>
+  </div>
+
+  <div id="reviewTasks" class="task-section">
+    <h2>In Review</h2>
+  </div>
+
+  <div id="doneTasks" class="task-section">
+    <h2>Done</h2>
+  </div>
+
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <script src="App.js"></script>
+  
+</body>
+</html>
