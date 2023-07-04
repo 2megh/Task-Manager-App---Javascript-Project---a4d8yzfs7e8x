@@ -1,59 +1,45 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Task Manager</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" href="task.css">
-  
-</head>
-<body>
-   
-  <h1>Task Manager</h1>
-  
-  <form id="taskForm">
-    <label for="taskName">Task Name:</label>
-    <input type="text" id="taskName" required>
-    <br>
-    <label for="taskDescription">Task Description:</label>
-    <textarea id="taskDescription" required></textarea>
-    <br>
-    <label for="taskSection">Section:</label>
-    <select id="taskSection">
-      <option value="open">Open</option>
-      <option value="progress">In Progress</option>
-      <option value="review">In Review</option>
-      <option value="done">Done</option>
-    </select>
-    <br>
-    <input type="submit" value="Add Task">
-  </form>
-
-  <div id="openTasks" class="task-section">
-    <h2>Open</h2>
-    
-  </div>
-
-  <div id="progressTasks" class="task-section">
-    <h2>In Progress</h2>
-  </div>
-
-  <div id="reviewTasks" class="task-section">
-    <h2>In Review</h2>
-  </div>
-
-  <div id="doneTasks" class="task-section">
-    <h2>Done</h2>
-  </div>
-
-  <div id="taskModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2 id="modalTitle"></h2>
-      <p id="modalDescription"></p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Task Manager App</title>
+  </head>
+  <body>
+    <!-- modal -->
+    <div class="modal" id="todo_form">
+      <div class="header">
+        <div class="title">Add Task</div>
+        <button class="btn close-modal">&times;</button>
+      </div>
+      <div class="body">
+        <label>Enter Task</label>
+        <input type="text" class="todo_inputs" />
+        <label>Discription</label>
+        <input type="text" class="todo_inputs" required>
+        <input type="submit" style="color: rgba(146, 31, 31, 0.628);" value="Add Task" id="todo_submit" style="background-color: aqua;" required/>
+      </div>
     </div>
-  </div>
+    <!-- todo -->
+    <div class="todo-container">
+      <div class="status" id="no_status">
+        <h1>Open</h1>
+        <button id="add_btn" data-target-modal="#todo_form" style="background-color: rgb(242, 209, 209);">+Add Task</button>
+      </div>
+      <div class="status">
+        <h1>In Progress</h1>
+      </div>
+      <div class="status">
+        <h1>In Review</h1>
+      </div>
+      <div class="status">
+        <h1>Done</h1>
+      </div>
+    </div>
 
-  <script src="App.js"></script>
-  
-</body>
+    <div id="overlay"></div>
+
+    <script src="App.js"></script>
+  </body>
 </html>
